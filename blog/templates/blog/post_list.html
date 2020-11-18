@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post List</title>
+    {% load static %}
+</head>
+<style>
+    .box{
+    width:400px; height:auto;
+    border: 1px solid lightgray;
+    display: inline-block;
+
+    }
+    img{
+        width:380px; height:380px;
+        margin:auto; display:block;
+    }
+    h1{
+    font.size : 100px;
+    }
+</style>
+<body>
+
+
+<div id="content">
+    <h1>안녕하살법</h1>
+    {% for post in object_list %}
+    <div class = "box">
+        <p>{{ post.title}}</p>
+        <img src="{{ post.image.url }}">
+        <p>{{ post.description }}</p>
+        <li>Create Date: {{ post.create_date }}</li>
+        <li>Modify Date: {{ post.modify_date }}</li>
+    </div>
+    {% endfor %}
+
+</div>
+</body>
+</html>

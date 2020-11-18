@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Turret+Road:wght@700&display=swap" rel="stylesheet">
+    
+
+</head>
+<style>
+    h1{
+        text_align:center;
+        font-size:50px;
+        font-family: 'Black Han Sans', sans-serif;
+        margin-left:500px;
+    }
+
+</style>
+<body>
+
+    <div id="content">
+            <h1>나의 유튜브영상 Top10</h1>
+        <ul>
+            {% for bookmark in object_list %}
+            <li> <a href = "{% url 'detail' bookmark.id %}">{{ bookmark }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
