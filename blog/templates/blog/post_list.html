@@ -28,7 +28,9 @@
     {% for post in object_list %}
     <div class = "box">
         <p>{{ post.title}}</p>
-        <img src="{{ post.image.url }}">
+        <a href="{% url 'blog_detail' post.id %}">
+            <img src="{{ post.image.url }}">
+        </a>
         <p>{{ post.description }}</p>
         <li>Create Date: {{ post.create_date }}</li>
         <li>Modify Date: {{ post.modify_date }}</li>
