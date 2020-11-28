@@ -67,16 +67,20 @@
             font-size:25px;
             color:fuchsia;
         }
+        #wallpaper{
+            background-image: url("media/wallpaper.jpg");
+            min-height: 900px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
     </style>
 </head>
 <body>
 
-    <iframe width="100%" height="1060"
-            src="https://www.youtube.com/embed/KGlv9Lw4QSM?autoplay=1&mute=1"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-    </iframe>
+    <div id="wallpaper"></div>
     <h1 class="main_text" id="title">DJANGO FRAMEWORK</h1>
     <h1 class="main_text" id="made">Made by
         <span id="username">Yejun</span> &amp;
