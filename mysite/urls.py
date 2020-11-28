@@ -13,9 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.contrib import admin
-from mysite.views import IndexView
+from mysite.views import IndexView,UserCreateView,UserCreateDoneTV
 
 from bookmark.views import BookmarkLV, BookmarkDV
 from blog.views import PostLV,PostDV
@@ -28,6 +28,12 @@ urlpatterns = [
     url(r'^$', IndexView.as_view(), name='index'),
     url(r'^bookmark/$', BookmarkLV.as_view(), name='bookmark_index'),
     url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(),name="detail"),
+
+    url(r'^accounts/',
+        include('django.contrib.auth.urls')),
+
+    url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
+    url(r'^accounts/register/done/$',UserCreateDoneTV.as_view(),name='register_done'),
 
     url(r'^blog/$', PostLV.as_view(),
         name="blog_index"),
